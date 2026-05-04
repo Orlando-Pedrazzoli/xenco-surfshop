@@ -1,65 +1,45 @@
-import Image from "next/image";
-
-export default function Home() {
+export default function HomePage() {
   return (
-    <div className="flex flex-col flex-1 items-center justify-center bg-zinc-50 font-sans dark:bg-black">
-      <main className="flex flex-1 w-full max-w-3xl flex-col items-center justify-between py-32 px-16 bg-white dark:bg-black sm:items-start">
-        <Image
-          className="dark:invert"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={100}
-          height={20}
-          priority
-        />
-        <div className="flex flex-col items-center gap-6 text-center sm:items-start sm:text-left">
-          <h1 className="max-w-xs text-3xl font-semibold leading-10 tracking-tight text-black dark:text-zinc-50">
-            To get started, edit the page.tsx file.
-          </h1>
-          <p className="max-w-md text-lg leading-8 text-zinc-600 dark:text-zinc-400">
-            Looking for a starting point or more instructions? Head over to{" "}
-            <a
-              href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Templates
-            </a>{" "}
-            or the{" "}
-            <a
-              href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Learning
-            </a>{" "}
-            center.
-          </p>
+    <main className="min-h-screen flex flex-col items-center justify-center bg-sand-50 px-6">
+      <div className="max-w-2xl text-center">
+        <p className="text-sm uppercase tracking-widest text-wood-600 mb-4">
+          Sprint 0 · Setup completo
+        </p>
+        <h1 className="text-6xl md:text-8xl font-display text-charcoal-900 mb-6">
+          XEN&CO.
+        </h1>
+        <p className="text-xl text-charcoal-700 mb-2">Surf Shop</p>
+        <p className="text-lg italic text-wood-700 mb-12 font-script text-3xl">
+          40 anos de surf no Guincho.
+        </p>
+
+        <div className="bg-white border border-wood-200 rounded-lg p-8 text-left space-y-3">
+          <h2 className="font-sans text-base font-medium text-charcoal-900 mb-4">
+            Sistema operacional:
+          </h2>
+          <CheckItem label="Next.js 16 + React 19 + TypeScript" />
+          <CheckItem label="Tailwind v4 com tokens da identidade Xen&Co" />
+          <CheckItem label="MongoDB Atlas (Mongoose 9)" />
+          <CheckItem label="NextAuth v5 (credentials + Google)" />
+          <CheckItem label="Stripe (cartão · MB WAY · Multibanco · Klarna)" />
+          <CheckItem label="Cloudinary para fotos" />
+          <CheckItem label="Resend para emails" />
+          <CheckItem label="22 modelos Semente prontos para carregar" />
         </div>
-        <div className="flex flex-col gap-4 text-base font-medium sm:flex-row">
-          <a
-            className="flex h-12 w-full items-center justify-center gap-2 rounded-full bg-foreground px-5 text-background transition-colors hover:bg-[#383838] dark:hover:bg-[#ccc] md:w-[158px]"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className="dark:invert"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={16}
-              height={16}
-            />
-            Deploy Now
-          </a>
-          <a
-            className="flex h-12 w-full items-center justify-center rounded-full border border-solid border-black/[.08] px-5 transition-colors hover:border-transparent hover:bg-black/[.04] dark:border-white/[.145] dark:hover:bg-[#1a1a1a] md:w-[158px]"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Documentation
-          </a>
-        </div>
-      </main>
+
+        <p className="mt-8 text-sm text-charcoal-400">
+          Em breve: Sprint 1 — Catálogo, página inicial, navegação
+        </p>
+      </div>
+    </main>
+  );
+}
+
+function CheckItem({ label }: { label: string }) {
+  return (
+    <div className="flex items-start gap-3 text-charcoal-700">
+      <span className="text-ocean-500 font-medium mt-0.5">✓</span>
+      <span className="font-sans text-sm">{label}</span>
     </div>
   );
 }
